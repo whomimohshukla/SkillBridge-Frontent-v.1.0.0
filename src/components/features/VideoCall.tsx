@@ -17,7 +17,7 @@ const VideoCall = () => {
   const [isAudioEnabled, setIsAudioEnabled] = useState(true);
   const [isVideoEnabled, setIsVideoEnabled] = useState(true);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [isFullScreen, setIsFullScreen] = useState(false);
+  const [/* isFullScreen */, setIsFullScreen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [messages, setMessages] = useState<{ text: string; time: string }[]>([]);
   const [newMessage, setNewMessage] = useState('');

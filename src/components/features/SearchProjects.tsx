@@ -17,7 +17,7 @@ const SearchProjects = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [projects, setProjects] = useState<Project[]>([
+  const [projects, /* setProjects */] = useState<Project[]>([
     {
       id: '1',
       title: 'Modern E-commerce Website Development',

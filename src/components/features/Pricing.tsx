@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiCheck, FiInfo } from 'react-icons/fi';
+import { FiCheck } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const Pricing = () => {

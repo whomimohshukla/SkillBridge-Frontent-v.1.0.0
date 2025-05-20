@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiSearch, FiFilter, FiStar, FiMapPin, FiDollarSign, FiClock, FiAward, FiSliders, FiBriefcase, FiCheck, FiHeart, FiMessageSquare } from 'react-icons/fi';
+import { FiSearch, FiStar, FiMapPin, FiDollarSign, FiAward, FiSliders, FiBriefcase, FiCheck, FiHeart, FiMessageSquare } from 'react-icons/fi';
 
 interface Talent {
   id: string;
@@ -37,7 +37,7 @@ const FindTalent = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
-  const [selectedTalent, setSelectedTalent] = useState<Talent | null>(null);
+  // Removed unused state for selectedTalent
   const [filters, setFilters] = useState<FilterState>({
     hourlyRate: [0, 150],
     skills: [],
@@ -135,7 +135,11 @@ const FindTalent = () => {
   const languageOptions = ['English', 'Spanish', 'Mandarin', 'Hindi', 'Arabic'];
   const locationOptions = ['North America', 'Europe', 'Asia', 'South America', 'Africa'];
 
-  const skillCategories = {
+  type SkillCategoryType = {
+    [key: string]: string[];
+  };
+
+  const skillCategories: SkillCategoryType = {
     'Frontend Development': [
       'React', 'Vue.js', 'Angular', 'Next.js', 'TypeScript', 
       'HTML/CSS', 'Tailwind CSS', 'Material UI', 'JavaScript',
@@ -366,7 +370,7 @@ const FindTalent = () => {
                 <div>
                   <h4 className="text-white font-medium mb-3">Popular {activeCategory} Skills</h4>
                   <div className="flex flex-wrap gap-2">
-                    {skillCategories[activeCategory].map((skill) => (
+                    {activeCategory && skillCategories[activeCategory]?.map((skill: string) => (
                       <button
                         key={skill}
                         onClick={() => handleSkillSelect(skill)}
@@ -543,7 +547,7 @@ const FindTalent = () => {
                         ))}
                       </div>
                       <button 
-                        onClick={() => setSelectedTalent(talent)}
+                        onClick={() => {/* setSelectedTalent(talent) */}}
                         className="w-full px-4 py-2 bg-code-green text-gray-900 rounded-xl hover:bg-code-green/90 transition-colors"
                       >
                         View Profile

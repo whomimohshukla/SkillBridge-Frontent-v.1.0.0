@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useParams, Navigate } from 'react-router-dom';
 import DocSidebar from './documentation/DocSidebar';
 import { DocContent } from './documentation/DocContent';
@@ -33,7 +33,7 @@ const Documentation = () => {
 
         {/* Main Content */}
         <DocContent
-          // title={currentDoc.title}
+          title={currentDoc.title}
           content={currentDoc.content}
         />
       </div>
