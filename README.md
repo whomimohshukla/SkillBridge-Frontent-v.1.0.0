@@ -28,6 +28,7 @@ export default tseslint.config({
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
 - Optionally add `...tseslint.configs.stylisticTypeChecked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- https://skill-bridge-frontent-v-1-0-0.vercel.app/
 
 ```js
 // eslint.config.js
